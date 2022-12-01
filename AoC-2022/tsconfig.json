@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "preserveConstEnums": true,
+        "strictNullChecks": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "target": "ES2019",
+        "outDir": ".build",
+        "moduleResolution": "node",
+        "lib": ["ESNext"],
+        "rootDir": "./",
+        "types": ["node"],
+        "typeRoots": ["node_modules/@types", "types"],
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["*.ts", "src/**/*.ts"],
+    "exclude": ["node_modules/**/*"]
+}
