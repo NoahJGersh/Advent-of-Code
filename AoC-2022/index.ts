@@ -2,7 +2,7 @@
 const src = './src';
 const fs = require('fs');
 
-function runAoC() {
+async function runAoC() {
   const args = process.argv;
   if (args.length !== 3) {
     console.log('Usage: node index.ts <day number>');
@@ -15,8 +15,8 @@ function runAoC() {
     process.exit();
   }
 
-
-  const day = require(`${src}/day${args[2]}`);
+  const day = require(`${src}/day${args[2]}.ts`);
+  await day.runDay(fs);
 }
 
 runAoC();
