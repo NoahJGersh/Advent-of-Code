@@ -1,11 +1,10 @@
-// AoC 2022 - Day 1
-const input = './input/day1-input.txt';
+// AoC 2022 - Day 1B
 
-const readline = require('readline');
-
-async function runDay(fs) {
+async function run1B(input) {
   let firstCalories = 0, secondCalories = 0, thirdCalories = 0;
 
+  const fs = require('fs');
+  const readline = require('readline');
   const stream = fs.createReadStream(input);
   const lines = readline.createInterface({
     input: stream,
@@ -35,4 +34,4 @@ async function runDay(fs) {
   console.log('Sum of top 3 calories:', firstCalories + secondCalories + thirdCalories);
 }
 
-exports.runDay = runDay
+exports.runDay = run1B

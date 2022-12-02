@@ -1,11 +1,12 @@
 // AoC 2022 - index.ts
 const src = './src';
-const fs = require('fs');
+const input = './input';
 
 async function runAoC() {
+  const fs = require('fs');
   const args = process.argv;
-  if (args.length !== 3) {
-    console.log('Usage: node index.ts <day number>');
+  if (args.length !== 4) {
+    console.log('Usage: node index.ts <day> <A|B>\n\n<day>: The day number to run\n<A|B>: Whether to run the first solution or second solution');
     process.exit();
   }
 
@@ -15,8 +16,8 @@ async function runAoC() {
     process.exit();
   }
 
-  const day = require(`${src}/day${args[2]}.ts`);
-  await day.runDay(fs);
+  const day = require(`${src}/day${args[2]}${args[3]}.ts`);
+  await day.runDay(`${input}/day${args[2]}-input.txt`);
 }
 
 runAoC();
